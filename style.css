@@ -24,7 +24,8 @@
     width: 100%;
     height: 100%;
 }
-a{
+
+a {
     background-color: transparent;
     text-decoration: none;
 }
@@ -34,12 +35,14 @@ a{
     border-radius: 4px;
     background-color: #FFF;
     box-shadow: 0px 6px 8px 0px rgba(0, 0, 0, 0.05);
-    width: 400px;
-    height: 440px;
+    width: 80%; /* Adjust the width as needed */
+    max-width: 400px; /* Maximum width for larger screens */
+    height: auto;
     z-index: 2;
     padding: 25px;
-    top: 30px;
-    left: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
 }
 
 .form h3 {
@@ -95,6 +98,15 @@ button {
     font-weight: 700;
     background: linear-gradient(180deg, #625BF7 0%, #463EEA 100%);
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a transition effect */
+}
+/* Change the background color when hovered */
+button:hover {
+    background: linear-gradient(180deg, #463EEA 0%, #625BF7 100%);
+}
+/* Change the background color when clicked */
+button:active {
+    background: #463EEA; /* Set a different background color when clicked */
 }
 
 .message {
@@ -110,7 +122,8 @@ button {
     position: absolute;
     z-index: 2;
     bottom: 20px;
-    left: 490px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: transparent;
     color: #333;
     font-family: Mulish;
@@ -126,7 +139,8 @@ span {
     font-weight: 400;
     cursor: pointer;
 }
-.form1{
+
+.form1 {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
@@ -134,174 +148,34 @@ span {
     align-items: center;
 }
 
-.form1 h1{
+.form1 h1 {
     font-size: 24px;
     font-weight: 500;
     font-family: Mulish;
 }
-.success-text{
+
+.success-text {
     color: #625BF7;
-    margin-left: 480px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
+/* Media Queries for smaller screens */
+@media screen and (max-width: 767px) {
+    .form {
+        width: 90%; /* Adjust the width as needed */
+        max-width: 90%;
+    }
 
-/* ----------------------------- */
-@media screen and (max-width: 350px){
-    .form {
-        width: 220px;
-        height: 80%;
-        padding: 10px;
-        top: 20px;
-        left: 35px;
-    }
-    .form1 h1{
-        font-size: 10px;
-    }
     .sign-up {
-        bottom: 20px;
-        left: 60px;
-        font-size: 12px;
-        font-weight: 300;
+        font-size: 16px;
     }
-    span {
-        font-size: 12px;
-        font-weight: 300;
-    }
-    .message {
-        font-size: 12px;
-        font-weight: 400;
-    }
-}
 
-@media screen and (min-width: 351px) and (max-width: 450px) {    
-    .form {
-        width: 250px;
-        height: 80%;
-        padding: 12px;
-        top: 20px;
-        left: 60px;
-    }
-    .form1 h1{
-        font-size: 18px;
-    }
-    .sign-up {
-        bottom: 20px;
-        left: 90px;
-        font-size: 12px;
-        font-weight: 300;
-    }
     span {
-        font-size: 12px;
-        font-weight: 300;
+        font-size: 16px;
     }
-    .message {
-        font-size: 15px;
-        font-weight: 500;
-    }
-}
-@media screen and (min-width: 451px) and (max-width: 990px) {
-    .form {
-        width: 350px;
-        height: 80%;
-        padding: 20px;
-        top: 10px;
-        left: 195px;
-    }
-    .form1 h1{
-        font-size: 18px;
-    }
-    .sign-up {
-        bottom: 20px;
-        left: 280px;
-        font-size: 15px;
-        font-weight: 500;
-    }
-    span {
-        font-size: 15px;
-        font-weight: 500;
-    }
-    .message {
-        font-size: 18px;
-        font-weight: 600;
-    }
-}
 
-@media screen and (min-width: 991px) and (max-width: 1199px) {
-    .form {
-        width: 350px;
-        height: 80%;
-        padding: 20px;
-        top: 10px;
-        left: 320px;
-    }
-    .form1 h1{
-        font-size: 18px;
-    }
-    .sign-up {
-        bottom: 20px;
-        left: 370px;
-        font-size: 20px;
-        font-weight: 500;
-    }
-    span {
-        font-size: 20px;
-        font-weight: 500;
-    }
     .message {
-        font-size: 18px;
-        font-weight: 600;
-    }
-}
-
-@media screen and (min-width: 1500px) {
-    .form {
-        width: 1200px;
-        height: 80%;
-        padding: 20px;
-        top: 30px;
-        left: 650px;
-    }
-    .sign-up {
-        bottom: 80px;
-        left: 880px;
-        font-size: 50px;
-        font-weight: 800;
-    }
-    span {
-        font-size: 50px;
-        font-weight: 800;
-    }
-    .message {
-        font-size: 50px;
-        font-weight: 800;
-    }
-    #signupForm {
-        gap: 30px;
-    }
-    .form h3 {
-        height: 50px;
-        font-size: 38px;
-        font-weight: 600;
-    }
-    
-    .form h1 {
-        height: 70px;
-        font-size: 58px;
-        font-weight: 800;
-        margin-bottom: 10px;
-    }
-    #signupForm label {
-        height: 50px;
-        font-size: 40px;
-        font-weight: 700;
-    }
-    #signupForm input {
-        height: 70px;
-        font-size: 30px;
-    }
-    
-    button {
-        height: 70px;
-        font-size: 50px;
+        font-size: 16px;
     }
 }
